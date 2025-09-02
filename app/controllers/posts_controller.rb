@@ -10,8 +10,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.user_id = session[:user_id]
+    @user = User.find(session[:user_id])
+    @post = @user.posts.new(post_params)
 
     if @post.save
       redirect_to root_path, notice: "Post created successfully."

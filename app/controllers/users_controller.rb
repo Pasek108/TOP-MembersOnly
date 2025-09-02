@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :unauthorize, only: [ :new, :create ]
-  
+
   def index
   end
 

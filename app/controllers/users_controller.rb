@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :unauthorize, only: [ :new, :create ]
+  before_action :unblock_if_authorized, only: [ :new, :create ]
 
   def index
   end

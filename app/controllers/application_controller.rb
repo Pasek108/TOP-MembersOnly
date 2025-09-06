@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     redirect_to login_path, alert: "Not authorized" if current_user.nil?
   end
 
-  def unauthorize
+  def block_if_authorized
     redirect_to root_path, alert: "You are already logged in" unless current_user.nil?
   end
 end
